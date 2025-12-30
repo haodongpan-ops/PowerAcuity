@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oasis Link FZC | Strategic Trade & Logistics</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        /* Hero 背景图 - 保持原来的深色滤镜和城市背景 */
+        h1, h2, h3, .brand-font { font-family: 'Montserrat', sans-serif; }
+        
+        /* Hero 背景图 - 引用本地文件 hero-bg.jpg */
         .hero-bg {
-            background-image: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.75)), url('https://images.unsplash.com/photo-1512453979798-5ea904ac66de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.75)), url('hero-bg.jpg');
             background-size: cover;
             background-position: center;
         }
+        
         /* 简单的淡入动画 */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
@@ -32,8 +35,13 @@
             <div class="flex justify-between h-24 items-center"> 
                 
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#home">
-                        <img class="h-20 w-auto hover:opacity-90 transition" src="logo.png" alt="Oasis Link FZC Logo">
+                    <a href="#home" class="flex items-center gap-3 group">
+                        <img class="h-16 w-16 object-contain group-hover:scale-105 transition duration-300 drop-shadow-sm" src="logo.png" alt="Oasis Link FZC Logo">
+                        
+                        <div class="flex flex-row items-baseline">
+                            <span class="text-2xl font-extrabold text-blue-900 brand-font tracking-tight">Oasis Link</span>
+                            <span class="text-sm font-bold text-yellow-600 tracking-widest ml-2 border-l-2 border-gray-300 pl-2">FZC</span>
+                        </div>
                     </a>
                 </div>
 
@@ -55,7 +63,7 @@
 
     <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-4 pt-20">
         <div class="max-w-4xl animate-fade-in-up">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight brand-font">
                 Bridging Global Markets <br>via the UAE
             </h1>
             <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto font-light">
@@ -82,7 +90,7 @@
                 </div>
                 <div>
                     <h2 class="text-sm font-bold text-yellow-600 uppercase tracking-widest mb-2">Who We Are</h2>
-                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">Your Gateway to Global Trade</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6 brand-font">Your Gateway to Global Trade</h2>
                     <p class="text-lg text-gray-600 mb-6 leading-relaxed">
                         Oasis Link FZC is a premier trade facilitation and supply chain management firm headquartered in the UAE. Strategically positioned between East and West, we serve as the vital commercial bridge connecting the manufacturing powerhouses of China with the dynamic, emerging markets of Africa.
                     </p>
@@ -117,7 +125,7 @@
     <section id="services" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-sm font-bold text-yellow-600 uppercase tracking-widest mb-2">What We Do</h2>
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Our Core Capabilities</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4 brand-font">Our Core Capabilities</h2>
             <p class="text-xl text-gray-600 mb-16 max-w-2xl mx-auto">We streamline the complexities of international trade so you can focus on growth.</p>
             
             <div class="grid md:grid-cols-3 gap-8">
@@ -125,7 +133,7 @@
                     <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-search-location text-3xl text-blue-900"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Strategic Sourcing</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 brand-font">Strategic Sourcing</h3>
                     <p class="text-gray-600 leading-relaxed">We identify top-tier manufacturers in China, ensuring you get high-quality products at competitive prices without the sourcing headache.</p>
                 </div>
                 
@@ -133,7 +141,7 @@
                     <div class="w-16 h-16 bg-yellow-50 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-ship text-3xl text-yellow-600"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Global Logistics</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 brand-font">Global Logistics</h3>
                     <p class="text-gray-600 leading-relaxed">Efficient freight forwarding and supply chain coordination, leveraging our UAE hub to move cargo smoothly from factory to final destination.</p>
                 </div>
                 
@@ -141,7 +149,7 @@
                     <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-file-contract text-3xl text-blue-900"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Trade Compliance</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 brand-font">Trade Compliance</h3>
                     <p class="text-gray-600 leading-relaxed">Expert handling of all import/export documentation, customs clearance, and regulatory requirements to ensure zero delays.</p>
                 </div>
             </div>
@@ -150,7 +158,7 @@
 
     <footer id="contact" class="bg-blue-900 text-white py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-6">Ready to Optimize Your Supply Chain?</h2>
+            <h2 class="text-3xl font-bold mb-6 brand-font">Ready to Optimize Your Supply Chain?</h2>
             <p class="text-xl text-blue-200 mb-12 max-w-2xl mx-auto">Contact Oasis Link FZC today to discuss your sourcing and logistics requirements.</p>
             
             <div class="flex flex-col md:flex-row justify-center gap-10 mb-16">
