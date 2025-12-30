@@ -9,76 +9,104 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: 'Inter', sans-serif; }
+        /* Hero 背景图 - 保持原来的深色滤镜和城市背景 */
         .hero-bg {
-            background-image: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.7)), url('https://images.unsplash.com/photo-1512453979798-5ea904ac66de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.75)), url('https://images.unsplash.com/photo-1512453979798-5ea904ac66de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
+        }
+        /* 简单的淡入动画 */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
         }
     </style>
 </head>
 <body class="text-gray-800 bg-gray-50">
 
-    <nav class="bg-white shadow-md fixed w-full z-50">
+    <nav class="bg-white shadow-md fixed w-full z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
+            <div class="flex justify-between h-24 items-center"> 
+                
                 <div class="flex-shrink-0 flex items-center">
-                    <span class="text-2xl font-bold text-blue-900 tracking-tighter">Oasis Link <span class="text-yellow-600">FZC</span></span>
+                    <a href="#home">
+                        <img class="h-20 w-auto hover:opacity-90 transition" src="logo.png" alt="Oasis Link FZC Logo">
+                    </a>
                 </div>
+
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="text-gray-700 hover:text-blue-900 font-medium">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-blue-900 font-medium">About</a>
-                    <a href="#services" class="text-gray-700 hover:text-blue-900 font-medium">Services</a>
-                    <a href="#contact" class="bg-blue-900 text-white px-5 py-2 rounded-md hover:bg-blue-800 transition">Contact Us</a>
+                    <a href="#home" class="text-gray-700 hover:text-blue-900 font-medium transition">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-900 font-medium transition">About</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-900 font-medium transition">Services</a>
+                    <a href="#contact" class="bg-blue-900 text-white px-6 py-2.5 rounded-full hover:bg-blue-800 transition shadow-md font-semibold">Contact Us</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-700 hover:text-blue-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-4">
-        <div class="max-w-4xl">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-4 pt-20">
+        <div class="max-w-4xl animate-fade-in-up">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
                 Bridging Global Markets <br>via the UAE
             </h1>
-            <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto font-light">
                 Your strategic partner for seamless sourcing, logistics, and trade compliance. Connecting Asian manufacturing excellence with African growth opportunities.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#contact" class="bg-yellow-600 text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-yellow-700 transition shadow-lg">
+                <a href="#contact" class="bg-yellow-600 text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-yellow-700 transition shadow-lg transform hover:-translate-y-1">
                     Partner With Us
                 </a>
-                <a href="#services" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-white hover:text-blue-900 transition">
+                <a href="#services" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-white hover:text-blue-900 transition transform hover:-translate-y-1">
                     Our Services
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-20 bg-white">
+    <section id="about" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-                <div class="mb-10 lg:mb-0">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Strategic Planning" class="rounded-lg shadow-xl">
+                <div class="mb-10 lg:mb-0 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-tl-3xl -z-10"></div>
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-yellow-100 rounded-br-3xl -z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Strategic Planning" class="rounded-lg shadow-2xl border-4 border-white">
                 </div>
                 <div>
-                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Your Gateway to Global Trade</h2>
+                    <h2 class="text-sm font-bold text-yellow-600 uppercase tracking-widest mb-2">Who We Are</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">Your Gateway to Global Trade</h2>
                     <p class="text-lg text-gray-600 mb-6 leading-relaxed">
                         Oasis Link FZC is a premier trade facilitation and supply chain management firm headquartered in the UAE. Strategically positioned between East and West, we serve as the vital commercial bridge connecting the manufacturing powerhouses of China with the dynamic, emerging markets of Africa.
                     </p>
                     <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                        We specialize in simplifying complex international trade. From identifying reliable suppliers and managing quality control to navigating cross-border logistics and customs compliance, we handle the end-to-end process.
+                        We specialize in simplifying complex international trade. From identifying reliable suppliers to navigating customs compliance, we handle the end-to-end process.
                     </p>
                     <ul class="space-y-4">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            <span class="text-gray-700 font-medium">Strategic UAE Free Zone Location</span>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <span class="ml-3 text-gray-700 font-medium">Strategic UAE Free Zone Location</span>
                         </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            <span class="text-gray-700 font-medium">End-to-End Supply Chain Control</span>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <span class="ml-3 text-gray-700 font-medium">End-to-End Supply Chain Control</span>
                         </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            <span class="text-gray-700 font-medium">Trusted Supplier Network in Asia</span>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <span class="ml-3 text-gray-700 font-medium">Trusted Supplier Network in Asia</span>
                         </li>
                     </ul>
                 </div>
@@ -86,57 +114,64 @@
         </div>
     </section>
 
-    <section id="services" class="py-20 bg-gray-50">
+    <section id="services" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Core Capabilities</h2>
+            <h2 class="text-sm font-bold text-yellow-600 uppercase tracking-widest mb-2">What We Do</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Our Core Capabilities</h2>
             <p class="text-xl text-gray-600 mb-16 max-w-2xl mx-auto">We streamline the complexities of international trade so you can focus on growth.</p>
             
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-search-location text-2xl text-blue-900"></i>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border-t-4 border-blue-900">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-search-location text-3xl text-blue-900"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Strategic Sourcing</h3>
-                    <p class="text-gray-600">We identify top-tier manufacturers in China, ensuring you get high-quality products at competitive prices without the sourcing headache.</p>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Strategic Sourcing</h3>
+                    <p class="text-gray-600 leading-relaxed">We identify top-tier manufacturers in China, ensuring you get high-quality products at competitive prices without the sourcing headache.</p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-ship text-2xl text-blue-900"></i>
+                <div class="bg-white p-10 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border-t-4 border-yellow-600">
+                    <div class="w-16 h-16 bg-yellow-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-ship text-3xl text-yellow-600"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Global Logistics</h3>
-                    <p class="text-gray-600">Efficient freight forwarding and supply chain coordination, leveraging our UAE hub to move cargo smoothly from factory to final destination.</p>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Global Logistics</h3>
+                    <p class="text-gray-600 leading-relaxed">Efficient freight forwarding and supply chain coordination, leveraging our UAE hub to move cargo smoothly from factory to final destination.</p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-file-contract text-2xl text-blue-900"></i>
+                <div class="bg-white p-10 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border-t-4 border-blue-900">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-file-contract text-3xl text-blue-900"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Trade Compliance</h3>
-                    <p class="text-gray-600">Expert handling of all import/export documentation, customs clearance, and regulatory requirements to ensure zero delays.</p>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Trade Compliance</h3>
+                    <p class="text-gray-600 leading-relaxed">Expert handling of all import/export documentation, customs clearance, and regulatory requirements to ensure zero delays.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="bg-blue-900 text-white py-16">
+    <footer id="contact" class="bg-blue-900 text-white py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl font-bold mb-6">Ready to Optimize Your Supply Chain?</h2>
-            <p class="text-xl text-blue-100 mb-10">Contact Oasis Link FZC today to discuss your requirements.</p>
+            <p class="text-xl text-blue-200 mb-12 max-w-2xl mx-auto">Contact Oasis Link FZC today to discuss your sourcing and logistics requirements.</p>
             
-            <div class="flex flex-col md:flex-row justify-center gap-8 mb-10">
-                <div class="flex items-center justify-center">
-                    <i class="fas fa-envelope mr-3 text-yellow-500"></i>
-                    <a href="mailto:info@oasislinkfzc.com" class="text-lg hover:text-yellow-400">info@oasislinkfzc.com</a>
-                </div>
-                <div class="flex items-center justify-center">
-                    <i class="fas fa-map-marker-alt mr-3 text-yellow-500"></i>
-                    <span class="text-lg">Ajman / Dubai, United Arab Emirates</span>
+            <div class="flex flex-col md:flex-row justify-center gap-10 mb-16">
+                <a href="mailto:info@oasislinkfzc.com" class="flex items-center justify-center bg-blue-800 px-8 py-6 rounded-lg hover:bg-blue-700 transition group">
+                    <i class="fas fa-envelope text-2xl mr-4 text-yellow-500 group-hover:scale-110 transition"></i>
+                    <span class="text-lg font-medium">info@oasislinkfzc.com</span>
+                </a>
+                <div class="flex items-center justify-center bg-blue-800 px-8 py-6 rounded-lg">
+                    <i class="fas fa-map-marker-alt text-2xl mr-4 text-yellow-500"></i>
+                    <span class="text-lg font-medium">Ajman / Dubai, UAE</span>
                 </div>
             </div>
             
-            <div class="border-t border-blue-800 mt-10 pt-8 text-sm text-blue-300">
-                &copy; 2025 Oasis Link FZC. All rights reserved.
+            <div class="border-t border-blue-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-blue-300">
+                <div class="mb-4 md:mb-0">
+                    &copy; 2025 Oasis Link FZC. All rights reserved.
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
